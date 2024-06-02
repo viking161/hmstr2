@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>naebka.dly.uebka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: "Open Sans", sans-serif;
+    }
+    ul {
+      list-style: none;
+    }
+    .block_btn {
+        background-color: #2a2930;
+        width: 40px;
+        border-radius: 10px;
+        position: absolute;
+        z-index: 100;
+        top: 462px;
+        left: 572px;
+        text-align: center;
+        font-size: 5.5px;
+        color: #8c8c92;
+        height: 30px;
+        padding-top: 6.5px;
+        padding-right: 7px;
+        padding-left: 1px;
+    }
+    .block_btn1 {
+      top: 453px;
+      left: 384px;
+      background-color: transparent;
+      padding: 0;
+      width: 65px;
+      height: 39px;
+    }
+    .img_btn {
+        width: 16px;
+        display: block;
+        padding-left: 15px;
+    }
+    .main_btn {
+        position: relative;
+        top: 0.3px;
+        left: 3px;
+        font-weight: 400;
+    }
+    .pa_img {
+        width: 250px;
+    }
+    .pa_bg {
+      width: 248px;
+      height: 384px;
+      background-color: #000;
+      position: absolute;
+      z-index: 10;
+      top: 77px;
+      left: 384px;
+    }
+    .pa_div {
+        width: 240px;
+        height: 300px;
+        background-color: #000;
+        position: absolute;
+        top: 100px;
+        left: 388px;
+        color: #fff;
+        z-index: 100;
+    }
+    .pa_main {
+        background-color: #2a2930;
+        border-radius: 10px;
+        padding: 10px 5px;
+        min-height: 319px;
+    }
+    .inp_cl {
+        display: flex;
+        align-items: center;
+        font-size: 10px;
+    }
+    .inp_cl p {
+        margin-top: 5px;
+        margin-bottom: 7px;
+    }
+    .inp_cl img {
+        width: 8px;
+        height: 8px;
+        margin-left: 5px;
+        margin-top: 1px;
+    }
+    .input_cl {
+        position: relative;
+    }
+    .input_cl input {
+        width: 94%;
+        position: relative;
+        top: -4px;
+        padding: 6px 5px;
+        left: 1px;
+        border-radius: 5px;
+        background-color: #2a2930;
+        border: 1px solid #fff;
+        color: #ccc;
+        font-size: 10px;
+        outline:none;
+    }
+    .input_cl input::placeholder {
+        font-size: 10px;
+        color: #ccc;
+    }
+    .input_cl img {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        right: 10px;
+        top: 3.5px;
+    }
+    .dropdown {
+        width: 94%;
+    position: relative;
+    display: inline-block;
+    left: 1px;
+  }
+  .dropdown-select {
+    width: 100%;
+    font-size: 10px;
+    padding: 5px 5px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ccc;
+    transition: border-color 0.3s ease;
+  }
+  .dropdown-options {
+    position: absolute;
+    opacity: .4;
+    background-color: #2a2930;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    max-height: 0;
+    overflow: hidden;
+    z-index: 1;
+    transition: max-height 0.3s ease;
+    width: 220px;
+    left: 3px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow: scroll;
+    font-size: 10px;
+  }
+  .dropdown-option {
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .dropdown-option:hover {
+    background-color: #ddd;
+  }
+  .show {
+    max-height: 100px;
+    opacity: 1;
+    transition: max-height 0.3s ease;
+  }
+  .dropdown_img {
+    top: -4px;
+  }
+  .dropdown_img img {
+    top: 8px;
+    right: -2px;
+  }
+  .show.dropdown_img {
+    display: none;
+  }
+  .pa_desc {
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -7px;
+    right: 8px;
+  }
+  .usdt {
+    margin-right: 7px;
+  }
+  .usdt::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 8px;
+    background-color: #ccc;
+    position: absolute;
+    right: 27.5px;
+    top: 12px;
+  }
+  .summa div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+  }
+  .rr_summa p {
+    margin: 0;
+  }
+  .rr_summa {
+    font-size: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .re_summa,
+  .ree_summa {
+    font-size: 10px;
+    margin-bottom: 10px;
+  } {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  .re_summa p,
+  .ree_summa p {
+    margin: 0;
+  }
+  .re_summa p:last-child,
+  .ree_summa p:last-child {
+    font-weight: 700;
+  }
+  .send_btn {
+    width: 100%;
+    padding: 5px 0px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-size: 11px;
+    margin-top: 5px;
+    transition: .3s;
+  }
+  .send_btn:hover {
+    background-color: #ccc;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .top_pa p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    top: -5px;
+  }
+  .logo_png {
+    width: 60px;
+    display: block;
+    margin: 0 auto;
+    margin-top: -10px;
+  }
+  .left_pa {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 15px;
+  }
+  .right_pa {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+  }
+  .preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    animation: pulse 1s infinite alternate;
+}
+
+/* Ключевые кадры анимации */
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Начальный масштаб */
+    opacity: 0.5; /* Начальная прозрачность */
+  }
+  100% {
+    transform: scale(1.5); /* Конечный масштаб */
+    opacity: 1; /* Конечная прозрачность */
+  }
+}
+
+/* Для вариации в скорости и задержки между точками вы можете использовать разные значения анимации для каждой точки */
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+  .block_btn1 img {
+    width: 65px;
+  }
+  .highlight img {
+    opacity: 1;
+  }
+  .send_img {
+    width: 61px;
+    position: absolute;
+    z-index: 10;
+    top: -5px;
+    left: -1px;
+  }
+  .highlight .send_img {
+    opacity: 1;
+  }
+  .send_img {
+    opacity: 0;
+  }
+  #list2 li {
+    opacity: 0;
+  }
+  #list2 .highlight {
+    opacity: 1;
+  }
+  .highlight .btn11 {
+    opacity: 1;
+  }
+  .highlight .btn22 {
+    opacity: 0;
+  }
+  .btn11 {
+    opacity: 0;
+  }
+  .btn22 {
+    opacity: 1;
+    top: 1px;
+    position: absolute;
+    left: 0;
+  }
+  #list2 video {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    height: 438px;
+  }
+  .preloader {
+    display: none !important;
+  }
+  .additional-class .preloader {
+    display: flex !important;
+    justify-content: center;
+    margin-top: -63px;
+  }
+  .preloader div {
+    padding: 0;
+  }
+  .lla_summa {
+    display: none !important;
+  }
+  .additional-class .rr_summa,
+  .additional-class .re_summa {
+    opacity: 0;
+  }
+  .additional-classs .preloader {
+    display: none !important;
+  }
+  .additional-classs .rr_summa,
+  .additional-classs .lla_summa {
+    opacity: 1 !important;
+    display: flex !important;
+  }
+  .additional-classs .re_summa {
+    display: none !important;
+  }
+  .highlighta,
+  .highlighta1 {
+    opacity: .5;
+    transition: .3s;
+  }
+  .second-div {
+    display: none;
+    z-index: 999999;
+  }
+  .letsstart {
+    display: block !important;
+    top: 0px;
+    position: absolute;
+    width: 229px;
+  }
+  .second-divxa2 {
+    display: none;
+  }
+  .letsstartxa2 {
+    display: block !important;
+    display: block !important;
+    position: absolute;
+    top: 0;
+    width: 229px;
+  }
+  .tt_right {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 20px;
+  }
+  .trans_31 {
+    margin-top: 15px;
+  }
+  .trans_31 div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .trans_31 p {
+    font-size: 8px;
+    margin: 0;
+  }
+  .trans_31 div:last-child p {
+    color: #ccc;
+    font-weight: 700;  
+    margin-top: 5px;
+  }
+</style>
+<body>
+        <video width="1000" height="540" autoplay id="videoId">
+            <source src="IMG_6959.MP4" type="video/mp4">
+        </video>
+        <ul id="list2">
+          <li class="highlight"><video width="1000" height="540" id="videoId">
+            <source src="IMG_6995.MP4" type="video/mp4">
+        </video></li>
+          <li><div class="pa_bg"></div>
+            <div class="pa_div">
+                <div class="pa_main second-diva" id="div2">
+                    <div class="top_pa">
+                        <img class="logo_png" src="token.PNG" alt=""> 
+                        <p>Вывод</p>
+                        <img class="left_pa" src="https://img.icons8.com/?size=100&id=2908&format=png&color=ffffff" alt="">
+                        <img class="right_pa" src="https://img.icons8.com/?size=100&id=2957&format=png&color=ffffff" alt="">
+                    </div>
+                    <div>
+                        <div>
+                            <div class="inp_cl">
+                                <p>Адрес USDT</p><img src="https://img.icons8.com/?size=100&id=77&format=png&color=ffffff" alt="">
+                            </div>
+                            <div class="input_cl">
+                                <input type="text" name="" placeholder="Введите адрес" id="">
+                                <img src="https://img.icons8.com/?size=100&id=30&format=png&color=ffffff" alt="">
+                            </div>
+                            <div class="inp_cl">
+                                <p>Cеть для вывода средств</p><img src="https://img.icons8.com/?size=100&id=77&format=png&color=ffffff" alt="">
+                            </div>
+                            <div class="input_cl dropdown_img">
+                                <div class="dropdown">
+                                    <div class="dropdown-select" onclick="toggleDropdown()">Выбор сети</div>
+                                    <img src="https://img.icons8.com/?size=100&id=85464&format=png&color=ffffff" alt="">
+                                    <div class="dropdown-options" id="dropdownOptions">
+                                      <div class="dropdown-option" onclick="selectOption('ERC20')">ERC20</div>
+                                      <div class="dropdown-option" onclick="selectOption('TRC20')">TRC20</div>
+                                      <div class="dropdown-option" onclick="selectOption('BSC(BEP20)')">BSC(BEP20)</div>
+                                      <div class="dropdown-option" onclick="selectOption('TON')">TON</div>
+                                      <div class="dropdown-option" onclick="selectOption('Optimism')">Optimism</div>
+                                      <div class="dropdown-option" onclick="selectOption('MATIC')">MATIC</div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="inp_cl">
+                                <p>Введите сумму</p>
+                            </div>
+                            <div class="input_cl">
+                                <input type="text" name="" placeholder="0" id="">
+                                <div class="pa_desc">
+                                    <p class="usdt">HMSTR</p>
+                                    <p>Макс.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summa">
+                        <div class="rr_summa">  
+                            <p>Комиссия вывода</p>
+                            <p>5 USDT</p>
+                        </div>
+                        <div class="re_summa">
+                            <p>Сумма получения</p>
+                            <p>- USDT</p>
+                        </div>
+                        <div class="ree_summa lla_summa">
+                          <p>Сумма получения</p>
+                          <p>375.80 USDT</p>
+                      </div>
+                        <button id="div8" class="send_btn first-div first-diva">Отправить</button>
+                        <div class="preloader">
+                          <div class="dot"></div>
+                          <div class="dot"></div>
+                          <div class="dot"></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="pa_main second-div second-diva1" id="div2">
+                      <div class="top_pa">
+                          <img class="logo_png" src="token.PNG" alt=""> 
+                          <p>Вывод</p>
+                          <img class="left_pa" src="https://img.icons8.com/?size=100&id=2908&format=png&color=ffffff" alt="">
+                          <img class="right_pa first-diva1 first-divxa2" src="https://img.icons8.com/?size=100&id=2957&format=png&color=ffffff" alt="">
+                      </div>
+                      <div>
+                          <div>
+                              <div class="inp_cl">
+                                  <p>Адрес USDT</p><img src="https://img.icons8.com/?size=100&id=77&format=png&color=ffffff" alt="">
+                              </div>
+                              <div class="input_cl">
+                                  <input type="text" name="" placeholder="Введите адрес" id="">
+                                  <img src="https://img.icons8.com/?size=100&id=30&format=png&color=ffffff" alt="">
+                              </div>
+                              <div class="inp_cl">
+                                  <p>Cеть для вывода средств</p><img src="https://img.icons8.com/?size=100&id=77&format=png&color=ffffff" alt="">
+                              </div>
+                              <div class="input_cl dropdown_img">
+                                  <div class="dropdown">
+                                      <div class="dropdown-select" onclick="toggleDropdown()">Выбор сети</div>
+                                      <img src="https://img.icons8.com/?size=100&id=85464&format=png&color=ffffff" alt="">
+                                      <div class="dropdown-options" id="dropdownOptions">
+                                        <div class="dropdown-option" onclick="selectOption('ERC20')">ERC20</div>
+                                        <div class="dropdown-option" onclick="selectOption('TRC20')">TRC20</div>
+                                        <div class="dropdown-option" onclick="selectOption('BSC(BEP20)')">BSC(BEP20)</div>
+                                        <div class="dropdown-option" onclick="selectOption('TON')">TON</div>
+                                        <div class="dropdown-option" onclick="selectOption('Optimism')">Optimism</div>
+                                        <div class="dropdown-option" onclick="selectOption('MATIC')">MATIC</div>
+                                      </div>
+                                    </div>
+                              </div>
+                              <div class="inp_cl">
+                                  <p>Введите сумму</p>
+                              </div>
+                              <div class="input_cl">
+                                  <input type="text" name="" placeholder="0" id="">
+                                  <div class="pa_desc">
+                                      <p class="usdt">HMSTR</p>
+                                      <p>Макс.</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="summa">
+                          <div class="rr_summa">  
+                              <p>Комиссия вывода</p>
+                              <p>5 USDT</p>
+                          </div>
+                          <div class="re_summa">
+                              <p>Сумма получения</p>
+                              <p>- USDT</p>
+                          </div>
+                          <div class="ree_summa lla_summa">
+                            <p>Сумма получения</p>
+                            <p>375.80 USDT</p>
+                        </div>
+                          <button class="send_btn first-div">Отправить</button>
+                          <div class="preloader">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                          </div>
+                      </div>
+                      </div>
+                      <div class="pa_main second-div second-diva1 second-divxa2" id="div2">
+                        <div class="top_pa">
+                            <img class="logo_png" src="token.PNG" alt=""> 
+                            <p>История вывода</p>
+                            <img class="left_pa" src="https://img.icons8.com/?size=100&id=2908&format=png&color=ffffff" alt="">
+                            <img class="right_pa tt_right" src="https://img.icons8.com/?size=100&id=W6yf4QF1Lv1e&format=png&color=ffffff" alt="">
+                        </div>
+                        
+                        <div class="trans_31">
+                          <div>
+                            <p>USDT</p>
+                            <p>375,80</p>
+                          </div>
+                          <div>
+                            <p>2024-06-02 17:10:21</p>
+                            <p>В обработке</p>
+                          </div>
+                        </div>
+                        <div class="trans_31">
+                          <div>
+                            <p>USDT</p>
+                            <p>184,78</p>
+                          </div>
+                          <div>
+                            <p>2024-05-30 09:31:39</p>
+                            <p>Вывод завершён</p>
+                          </div>
+                        </div>
+                        <div class="trans_31">
+                          <div>
+                            <p>USDT</p>
+                            <p>145.92</p>
+                          </div>
+                          <div>
+                            <p>2024-05-26 18:41:09</p>
+                            <p>Вывод завершён</p>
+                          </div>
+                        </div>
+                        <div class="trans_31">
+                          <div>
+                            <p>USDT</p>
+                            <p>185.01</p>
+                          </div>
+                          <div>
+                            <p>2024-05-23 14:44:59</p>
+                            <p>Вывод завершён</p>
+                          </div>
+                        </div>
+                        
+                        
+                        </div>
+                </div>
+            </div></li>
+        </ul>
+        <ul id="list1">
+        <li class="block_btn block_btn1 highlight">
+                <img class="btn11" src="btn.png" alt="">
+                <img class="btn22" src="btn2.png" alt="">
+        </li>
+            <li class="block_btn block_btn2">
+              <img class="send_img" src="send.png" alt="">
+              <img class="img_btn" style="opacity: 1;" src="https://img.icons8.com/?size=100&id=35073&format=png&color=515155" alt="">
+              <div class="main_btn">Send</div> 
+            </li>
+        </ul>
+            <script>
+                function toggleDropdown() {
+            var dropdownOptions = document.getElementById("dropdownOptions");
+            dropdownOptions.classList.toggle("show");
+          }
+          
+          function selectOption(option) {
+            var dropdownSelect = document.querySelector(".dropdown-select");
+            dropdownSelect.textContent = option;
+            document.getElementById("dropdownOptions").classList.remove("show");
+          }
+ 
+ // Получаем список элементов первого и второго списка
+ var listItems1 = document.getElementById('list1').getElementsByTagName('li');
+  var listItems2 = document.getElementById('list2').getElementsByTagName('li');
+
+  // Добавляем обработчик события клика на каждый элемент первого списка
+  for (var i = 0; i < listItems1.length; i++) {
+    listItems1[i].addEventListener('click', function() {
+      // Удаляем класс highlight у всех элементов первого списка
+      for (var j = 0; j < listItems1.length; j++) {
+        listItems1[j].classList.remove('highlight');
+        listItems2[j].classList.remove('highlight');
+      }
+
+      // Добавляем класс highlight к выбранному элементу первого списка
+      this.classList.add('highlight');
+
+      // Получаем индекс выбранного элемента
+      var index = Array.from(listItems1).indexOf(this);
+
+      // Добавляем класс highlight к соответствующему элементу второго списка
+      listItems2[index].classList.add('highlight');
+    });
+  }
+
+    // Находим элемент с классом red
+    var divElement = document.querySelector('.summa');
+
+// Устанавливаем таймер для добавления класса через 30 секунд
+setTimeout(function() {
+  divElement.classList.add('additional-class');
+}, 19000); // 30000 миллисекунд = 30 секунд
+var divElement = document.querySelector('.summa');
+
+// Устанавливаем таймер для добавления класса через 30 секунд
+setTimeout(function() {
+divElement.classList.add('additional-classs');
+}, 22000); // 30000 миллисекунд = 30 секунд
+
+  // Получаем ссылки на div1 и div2
+  var div1 = document.getElementById('div8');
+  var div2 = document.getElementById('div9');
+
+  // Добавляем обработчик события клика к div1
+  div1.addEventListener('click', function() {
+    // Добавляем класс highlight к div2
+    div2.classList.add('highdark');
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const firstDiv = document.querySelector('.first-div');
+    const secondDiv = document.querySelector('.second-div');
+
+    firstDiv.addEventListener('click', function() {
+        setTimeout(function() {
+            secondDiv.classList.add('letsstart');
+        }, 3000);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const firstDiv = document.querySelector('.first-diva');
+    const secondDiv = document.querySelector('.second-diva');
+
+    firstDiv.addEventListener('click', function() {
+        secondDiv.classList.add('highlighta');
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const firstDiv = document.querySelector('.first-diva1');
+    const secondDiv = document.querySelector('.second-diva1');
+
+    firstDiv.addEventListener('click', function() {
+        secondDiv.classList.add('highlighta1');
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const firstDiv = document.querySelector('.first-divxa2');
+    const secondDiv = document.querySelector('.second-divxa2');
+
+    firstDiv.addEventListener('click', function() {
+        setTimeout(function() {
+            secondDiv.classList.add('letsstartxa2');
+        }, 2000);
+    });
+});
+</script>
+</body>
+</html>
