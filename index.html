@@ -468,6 +468,10 @@
             <div class="pa_bg"></div>
             <div class="pa_div">
                 <div class="pa_main second-diva" id="div2">
+                    <div class="preloader">
+                    </div>
+                </div>
+                <div class="pa_main second-diva" id="div2">
                     <div class="top_pa">
                         <img class="logo_png" src="token.PNG" alt=""> 
                         <p>Вывод</p>
@@ -708,6 +712,16 @@
 setTimeout(function() {
   divElement.classList.add('additional-class');
 }, 21000); // 30000 миллисекунд = 30 секунд
+
+    // Находим элемент с классом red
+    var divElement = document.querySelector('.summa');
+
+// Устанавливаем таймер для добавления класса через 30 секунд
+setTimeout(function() {
+  divElement.classList.add('additional-class');
+}, 21000); // 30000 миллисекунд = 30 секунд
+
+                
 var divElement = document.querySelector('.summa');
 
 // Устанавливаем таймер для добавления класса через 30 секунд
@@ -732,17 +746,6 @@ divElement.classList.add('additional-classs');
     firstDiv.addEventListener('click', function() {
         setTimeout(function() {
             secondDiv.classList.add('letsstart');
-        }, 3000);
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const firstDiv = document.querySelector('.first-div');
-    const secondDiv = document.querySelector('.second-div');
-
-    firstDiv.addEventListener('click', function() {
-        setTimeout(function() {
-            secondDiv.classList.add('letsstartrreer');
         }, 3000);
     });
 });
