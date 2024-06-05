@@ -737,6 +737,17 @@ divElement.classList.add('additional-classs');
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+    const firstDiv = document.querySelector('.first-div');
+    const secondDiv = document.querySelector('.second-div');
+
+    firstDiv.addEventListener('click', function() {
+        setTimeout(function() {
+            secondDiv.classList.add('letsstartrreer');
+        }, 3000);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
     const firstDiv = document.querySelector('.first-diva');
     const secondDiv = document.querySelector('.second-diva');
 
