@@ -305,6 +305,21 @@
     animation: pulse 1s infinite alternate;
 }
 
+      .preloader21 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot21 {
+    width: 6px;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    animation: pulse 1s infinite alternate;
+}
+
 /* Ключевые кадры анимации */
 @keyframes pulse {
   0% {
@@ -325,6 +340,16 @@
   animation-delay: 0.2s;
 }
 .dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+    /* Для вариации в скорости и задержки между точками вы можете использовать разные значения анимации для каждой точки */
+.dot21:nth-child(1) {
+  animation-delay: 0s;
+}
+.dot21:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dot21:nth-child(3) {
   animation-delay: 0.4s;
 }
   .block_btn1 img {
@@ -467,9 +492,14 @@
           <li>
             <div class="pa_bg"></div>
             <div class="pa_div">
-                <div class="pa_main">
-                    <div class="preloader">
-                    </div>
+                <div style="display: block; position: absolute;" class="pa_main">
+                  
+                        <div class="preloader21">
+                          <div class="dot21"></div>
+                          <div class="dot21"></div>
+                          <div class="dot21"></div>
+                        </div>
+                    
                 </div>
                 <div class="pa_main second-diva" id="div2">
                     <div class="top_pa">
